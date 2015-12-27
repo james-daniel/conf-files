@@ -1,0 +1,11 @@
+Config {
+       position = Top
+     , border = FullB
+     , borderColor = "pink"
+     , bgColor = "black"
+     , fgColor = "white"
+     , commands = [Run Date "<fc=#FFFFFF>%F (%a) %T</fc>" "date" 10] 
+     , sepChar = "%"
+     , alignSep = "}{"
+     , template = "%date%"
+}
