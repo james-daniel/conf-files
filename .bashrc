@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -122,3 +122,4 @@ alias egrep="egrep --color=auto"
 alias rs="sudo /opt/scribbleton-x64-1.2.0/run_scribbleton.sh"
 alias cbat="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i percentage"
 alias htop="htop -d 2"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
