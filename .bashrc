@@ -59,7 +59,7 @@ fi
 #if [ "$color_prompt" = yes ]; then
     #PS1="\[\033[38;5;27m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;27m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\]][\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]: \[$(tput sgr0)\]"
 #else
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+export PS1="\[\033[38;5;10m\][\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\d][\u@\h][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 #fi
 unset color_prompt force_color_prompt
 
@@ -104,12 +104,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # User defined aliases
-#alias l="ls -lahF --color=auto"
-alias l="ls++ -ahF --potsf"
+alias l="ls -lahF --color=auto"
 alias p="pwd"
 alias c="cd"
 alias lk="xscreensaver-command --lock"
