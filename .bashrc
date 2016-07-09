@@ -110,7 +110,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias l="ls -lahF --color=auto"
 alias p="pwd"
 alias c="cd"
-alias lk="xscreensaver-command --lock"
+alias lk="i3lock -c 000000"
 alias lkk="sudo pm-suspend"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
