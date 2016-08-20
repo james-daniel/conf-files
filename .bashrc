@@ -59,7 +59,10 @@ fi
 #if [ "$color_prompt" = yes ]; then
     #PS1="\[\033[38;5;27m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;27m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\]][\[$(tput sgr0)\]\[\033[38;5;10m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]: \[$(tput sgr0)\]"
 #else
-export PS1="\[\033[38;5;10m\][\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\d][\u@\h][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+# PS1 sourced from http://www.askapache.com/linux/bash-power-prompt.html
+export PS1="\n\[\e[1;30m\][$$:$PPID - \j:\!\[\e[1;30m\]]\[\e[0;36m\] \T \[\e[1;30m\][\[\e[1;34m\]\u@\H\[\e[1;30m\]:\[\e[0;37m\]${SSH_TTY:-o} \[\e[0;32m\]+${SHLVL}\[\e[1;30m\]] \[\e[1;37m\]\w\[\e[0;37m\] \n\$ "
+
 #fi
 unset color_prompt force_color_prompt
 
@@ -105,12 +108,16 @@ if ! shopt -oq posix; then
 fi
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GIT='/home/jdaniel/git'
+export GITPUB='/home/jdaniel/git-pub'
+export GITSECDAEMONS='/home/jdaniel/git-securitydaemons'
 
 # User defined aliases
 alias l="ls -lahF --color=auto"
 alias p="pwd"
 alias c="cd"
-alias lk="i3lock -c 000000"
+#alias lk="i3lock -i ~/.i3/background.png -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e"
+alias lk="xscreensaver-command --lock"
 alias lkk="sudo pm-suspend"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
