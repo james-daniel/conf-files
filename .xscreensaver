@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.30 for jdaniel on Fri Dec 25 22:26:25 2015.
+# Written by xscreensaver-demo 5.30 for jdaniel on Sat Aug  6 23:09:40 2016.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:06:00
@@ -35,7 +35,7 @@ chooseRandomImages: False
 imageDirectory:	
 
 mode:		one
-selected:	154
+selected:	208
 
 textMode:	date
 textLiteral:	CH-PRD95
@@ -252,6 +252,7 @@ programs:								      \
 - GL: 				projectiveplane -root			    \n\
 				tessellimage -root			    \n\
 - GL: 				winduprobot -root			    \n\
+			"ATV4" 	atv4					    \n\
 
 
 pointerPollTime:    0:00:05
