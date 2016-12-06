@@ -108,10 +108,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# env_vars
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export GIT='/home/jdaniel/git'
 export GITPUB='/home/jdaniel/git-pub'
 export GITSECDAEMONS='/home/jdaniel/git-securitydaemons'
+export CLOUDSDK_PYTHON="/usr/bin/python2.7"
 
 # User defined aliases
 alias l="ls -lahF --color=auto"
@@ -130,3 +132,13 @@ alias gl="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(auto)%d%Cres
 alias gp="git push origin HEAD:master"
 alias wx="curl wttr.in/Chicago"
 alias gr="cd ~/.git/"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /home/jdaniel/Downloads/google-cloud-sdk/path.bash.inc ]; then
+  source '/home/jdaniel/Downloads/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /home/jdaniel/Downloads/google-cloud-sdk/completion.bash.inc ]; then
+  source '/home/jdaniel/Downloads/google-cloud-sdk/completion.bash.inc'
+fi
