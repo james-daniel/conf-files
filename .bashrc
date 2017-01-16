@@ -114,6 +114,10 @@ export GIT='/home/jdaniel/git'
 export GITPUB='/home/jdaniel/git-pub'
 export GITSECDAEMONS='/home/jdaniel/git-securitydaemons'
 export CLOUDSDK_PYTHON="/usr/bin/python2.7"
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 
 # User defined aliases
 alias l="ls -lahF --color=auto"
