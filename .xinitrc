@@ -10,5 +10,8 @@ xfce4-power-manager &
 # Initialize and daemonize xscreensaver
 xscreensaver &
 
+# Initialize xbindkeys
+xbindkeys &
+
 # Initialize xmonad
 exec xmonad
