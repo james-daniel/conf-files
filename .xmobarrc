@@ -1,11 +1,18 @@
-Config {
-       position = Top
-     , border = FullB
-     , borderColor = "pink"
-     , bgColor = "black"
-     , fgColor = "white"
-     , commands = [Run Date "<fc=#FFFFFF>%F (%a) %T</fc>" "date" 10] 
-     , sepChar = "%"
-     , alignSep = "}{"
-     , template = "%date%"
-}
+-- XMOBARRC CONFIGURATION - JAMES DANIEL
+-- ADAPTED FROM: John Goerzen
+
+Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Bottom
+       , lowerOnStart = True
+       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "%Y-%m-%dT%H:%M:%S%Z" "date" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%cpu% | %memory% * %swap% }{ <fc=#ee9a00>%date%</fc> | <fc=#00FF00>%whoami%@%hostname%</fc>"
+       }
