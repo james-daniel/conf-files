@@ -4,15 +4,18 @@
 Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "grey"
-       , position = Bottom
+       , position = Top
        , lowerOnStart = True
-       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Com "uname" ["-s","-r"] "" 36000
+       , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red", "-t", "<fc=#f0ff00>CPU</fc>: <total>%"] 5
+                    , Run Memory ["-t","<fc=#f0ff00>MEM</fc>: <usedratio>%"] 5
+                    , Run Swap ["-t", "<fc=#f0ff00>SWP</fc>: <usedratio>%"] 5
+                    , Run BatteryP ["BAT0"]
+                      ["-l","#ff0000","-h","#2fff00","-t","<fc=#f0ff00>BAT</fc>: <left>%"] 100
                     , Run Date "%Y-%m-%dT%H:%M:%S%Z" "date" 10
+                    , Run DiskIO [("/", "<fc=#f0ff00>R</fc>: <read> <fc=#f0ff00>W</fc>:<write>")] [] 10
+                    , Run Com "uname" ["-s","-r"] "" 0
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | %memory% * %swap% }{ <fc=#ee9a00>%date%</fc> | <fc=#00FF00>%whoami%@%hostname%</fc>"
+       , template = "%cpu%| %memory% * %swap% | %diskio% | %battery%}<fc=#f0ff00>%date%</fc>{<fc=#f0ff00>%uname%</fc> | <fc=#f0ff00>%whoami%@%hostname%</fc>"
        }
