@@ -12,10 +12,12 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run BatteryP ["BAT0"]
                       ["-l","#ff0000","-h","#2fff00","-t","<fc=#f0ff00>BAT</fc>: <left>%"] 100
                     , Run Date "%Y-%m-%dT%H:%M:%S%Z" "date" 10
-                    , Run DiskIO [("/", "<fc=#f0ff00>R</fc>: <read> <fc=#f0ff00>W</fc>:<write>")] [] 10
+                    , Run DiskIO [("/", "<fc=#f0ff00>RDO</fc>: <read> <fc=#f0ff00>WRO</fc>: <write>")] [] 10
                     , Run Com "uname" ["-s","-r"] "" 0
+                    , Run Com "date" ["--rfc-3339=seconds"] "datectrl" 10
+                    , Run Com "date" ["--rfc-3339=seconds", "-u"] "dategmt" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu%| %memory% * %swap% | %diskio% | %battery%}<fc=#f0ff00>%date%</fc>{<fc=#f0ff00>%uname%</fc> | <fc=#f0ff00>%whoami%@%hostname%</fc>"
+       , template = "%cpu% | %memory% * %swap% | %diskio% | %battery%}<fc=#ff00f4>%datectrl%</fc> | <fc=#ff00f4>%dategmt%</fc>{<fc=#f0ff00>%uname%</fc> | <fc=#f0ff00>%whoami%@%hostname%</fc>"
        }
