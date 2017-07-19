@@ -118,17 +118,15 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-
 # User defined aliases
 alias l="ls -lahF --color=auto"
 alias p="pwd"
 alias c="cd"
-#alias lk="i3lock -i ~/.i3/background.png -c '#000000' -o '#191d0f' -w '#572020' -l '#ffffff' -e"
+#alias lk="i3lock -i ~/wp-auth.png"
 alias lk="xscreensaver-command --lock"
 alias lkk="sudo pm-suspend"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
-alias rs="sudo /opt/scribbleton-x64-1.2.0/run_scribbleton.sh"
 alias cbat="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -i percentage"
 alias htop="htop -d 2"
 alias gc="git commit"
@@ -146,3 +144,7 @@ fi
 if [ -f /home/jdaniel/Downloads/google-cloud-sdk/completion.bash.inc ]; then
   source '/home/jdaniel/Downloads/google-cloud-sdk/completion.bash.inc'
 fi
+
+# Start ssh-agent
+eval `ssh-agent`
+ssh-add ~/.ssh/id_rsa

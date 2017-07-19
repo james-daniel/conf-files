@@ -7,11 +7,15 @@ xrdb -merge ./.Xresources
 # Start xfce4-power-manager
 xfce4-power-manager &
 
-# Initialize and daemonize xscreensaver
-xscreensaver &
-
 # Initialize xbindkeys
 xbindkeys &
 
+# Initialize xmobar
+xmobar &
+
+# Initialize xscreensaver
+xscreensaver &
+
 # Initialize xmonad
 exec xmonad
+

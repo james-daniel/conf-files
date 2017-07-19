@@ -1,4 +1,4 @@
-"xscreensaver-command -lock"
+"xscreensaver-command --lock"
     XF86Display
 "xbacklight -dec 5"
     XF86MonBrightnessDown
